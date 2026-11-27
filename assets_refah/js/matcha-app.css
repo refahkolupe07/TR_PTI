@@ -1,0 +1,483 @@
+/* ==========================================================================
+   Matcha holic — komponen bersama (tautan kartu + pop-up HTML/CSS saja)
+   --------------------------------------------------------------------------
+   Dipakai bersama oleh Home, Menu, halaman detail, Login, dan Daftar.
+   Seluruh pop-up di berkas ini dibuat murni dengan HTML + CSS memakai
+   mekanisme :target dan :has(:checked) — tanpa JavaScript, tanpa framework,
+   tanpa backend, dan tanpa dependensi.
+
+   Tidak ada data form yang dikirim, disimpan, atau dimasukkan ke URL.
+   ========================================================================== */
+
+/* ---------- Tautan kartu produk (pembungkus kartu yang bisa diklik) ------ */
+.product-card__link,
+.menu-card__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Pop-up (overlay)
+   ========================================================================== */
+
+/* Tersembunyi sampai elemennya menjadi :target dari sebuah tautan. */
+.mh-overlay {
+  display: none;
+}
+
+.mh-overlay:target {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  z-index: 99998;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(11, 43, 38, 0.55);
+  font-family: "DM Sans", system-ui, sans-serif;
+  color: #0b2b26;
+}
+
+/* Saat pop-up terbuka, halaman di belakangnya tidak ikut bergulir. */
+body:has(.mh-overlay:target) {
+  overflow: hidden;
+}
+
+.mh-pop {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 30px 28px 26px;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.55);
+}
+
+.mh-pop__close {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  font-size: 30px;
+  line-height: 1;
+  color: #4f675d;
+  text-decoration: none;
+}
+
+.mh-pop__close:hover {
+  color: #0b2b26;
+}
+
+.mh-pop__title {
+  margin: 0 0 6px;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.mh-pop__sub {
+  margin: 0 0 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #4f675d;
+}
+
+.mh-pop__note {
+  margin: 16px 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  font-style: italic;
+  color: #7a8c86;
+}
+
+.mh-pop__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+/* ---------- Tombol di dalam pop-up -------------------------------------- */
+.mh-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 26px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.mh-btn:hover {
+  opacity: 0.9;
+}
+
+.mh-btn--dark {
+  background: #0b2b26;
+  color: #f3f1e7;
+}
+
+.mh-btn--light {
+  background: #dcefdc;
+  color: #0b2b26;
+}
+
+/* ==========================================================================
+   Form pemesanan
+   ========================================================================== */
+
+.mh-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* fieldset (pilihan layanan) direset agar seragam dengan blok isian lain */
+.mh-field {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.mh-field__label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #7fae8a;
+}
+
+.mh-field__input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 52px;
+  padding: 0 18px;
+  border: 1.5px solid #cfe3d0;
+  border-radius: 14px;
+  background: #fafaf8;
+  font-family: inherit;
+  font-size: 16px;
+  color: #0b2b26;
+  outline: none;
+}
+
+.mh-field__input:focus {
+  border-color: #7fae8a;
+}
+
+.mh-field__input--area {
+  height: auto;
+  min-height: 92px;
+  padding: 14px 18px;
+  resize: vertical;
+}
+
+/* ---------- Pilihan layanan: Pengiriman / Ambil di tempat --------------- */
+.mh-radio-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Radio asli disembunyikan, tetapi tetap dapat difokuskan lewat keyboard. */
+.mh-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mh-radio__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1.5px solid #cfe3d0;
+  border-radius: 999px;
+  background: #f6faf5;
+  font-size: 15px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.mh-radio__label::before {
+  content: "";
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #7fae8a;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.mh-radio__label:hover {
+  border-color: #0b2b26;
+}
+
+.mh-radio:checked + .mh-radio__label {
+  border-color: #0b2b26;
+  background: #dcefdc;
+}
+
+.mh-radio:checked + .mh-radio__label::before {
+  border: 5px solid #0b2b26;
+}
+
+.mh-radio:focus-visible + .mh-radio__label {
+  outline: 2px solid #3a6b4b;
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Metode pembayaran
+   ========================================================================== */
+
+.mh-pay {
+  position: relative;
+  display: grid;
+  gap: 12px;
+}
+
+.mh-pay__radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mh-pay__option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 1.5px solid #cfe3d0;
+  border-radius: 18px;
+  background: #f6faf5;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.mh-pay__option:hover {
+  border-color: #0b2b26;
+}
+
+.mh-pay__radio:checked + .mh-pay__option {
+  border-color: #0b2b26;
+  background: #dcefdc;
+}
+
+.mh-pay__radio:focus-visible + .mh-pay__option {
+  outline: 2px solid #3a6b4b;
+  outline-offset: 2px;
+}
+
+.mh-pay__thumb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 62px;
+  height: 46px;
+  border-radius: 12px;
+  background: #0b2b26;
+  color: #dcefdc;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.mh-pay__text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mh-pay__text strong {
+  font-size: 15.5px;
+  font-weight: 600;
+}
+
+.mh-pay__text small {
+  font-size: 13px;
+  color: #4f675d;
+}
+
+/* ==========================================================================
+   Struk demo
+   --------------------------------------------------------------------------
+   Tanpa nominal dan tanpa rincian harga. Nilai "Metode pembayaran" dan
+   "Layanan" dibaca langsung oleh CSS dari pilihan pengguna (:has + :checked),
+   sehingga struk mengikuti pilihan tanpa JavaScript.
+   ========================================================================== */
+
+.mh-struk__ok {
+  margin: 0 0 4px;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 26px;
+  line-height: 1.15;
+}
+
+.mh-struk__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 18px 0 0;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: #f6faf5;
+}
+
+.mh-struk__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 15px;
+}
+
+.mh-struk__row dt {
+  color: #4f675d;
+}
+
+.mh-struk__row dd {
+  margin: 0;
+  text-align: right;
+  font-weight: 600;
+}
+
+/* Nilai alternatif disembunyikan sampai pilihannya dicentang. */
+.mh-struk__m,
+.mh-struk__l--ambil {
+  display: none;
+}
+
+body:has(#bayar-qris:checked) .mh-struk__belum,
+body:has(#bayar-cod:checked) .mh-struk__belum {
+  display: none;
+}
+
+body:has(#bayar-qris:checked) .mh-struk__m--qris,
+body:has(#bayar-cod:checked) .mh-struk__m--cod {
+  display: inline;
+}
+
+body:has(#layanan-ambil:checked) .mh-struk__l--pengiriman {
+  display: none;
+}
+
+body:has(#layanan-ambil:checked) .mh-struk__l--ambil {
+  display: inline;
+}
+
+/* ---------- Responsif ---------------------------------------------------- */
+@media (max-width: 640px) {
+  .mh-overlay:target {
+    padding: 12px;
+  }
+
+  .mh-pop {
+    padding: 26px 20px 22px;
+    border-radius: 20px;
+  }
+
+  .mh-pop__title {
+    font-size: 26px;
+  }
+
+  .mh-pop__actions .mh-btn {
+    flex: 1 1 100%;
+  }
+
+  .mh-struk__row {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .mh-struk__row dd {
+    text-align: left;
+  }
+}
+
+/* ==========================================================================
+   Tambahan untuk navigasi & pop-up (task: hapus pencarian, demo login,
+   pop-up kontak) — tetap HTML + CSS saja, tanpa JavaScript.
+   ========================================================================== */
+
+/* Tombol sosial pada Login/Daftar kini berupa tautan (<a>) yang membuka
+   pop-up demo, sehingga garis bawah bawaan tautan dimatikan. */
+a.button-social {
+  text-decoration: none;
+}
+
+/* ---------- Label kecil "Demo" pada pop-up ------------------------------- */
+.mh-pop__badge {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #dcefdc;
+  color: #0b2b26;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ---------- Daftar informasi kontak di dalam pop-up ---------------------- */
+.mh-kontak {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+}
+
+.mh-kontak__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 16px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: #f6faf5;
+}
+
+.mh-kontak__label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #0b2b26;
+}
+
+.mh-kontak__value {
+  margin: 0;
+  font-size: 14px;
+  color: #4f675d;
+  text-align: right;
+}
+
+/* Placeholder untuk data yang belum tersedia di proyek. */
+.mh-kontak__todo {
+  font-style: italic;
+  color: #7a8c86;
+}
+
+@media (max-width: 640px) {
+  .mh-kontak__value {
+    text-align: left;
+  }
+}

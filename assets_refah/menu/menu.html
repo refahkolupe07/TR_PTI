@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu yang tersedia — Matcha holic</title>
+  <meta name="description" content="Pilih dan nikmati berbagai varian matcha dari Matcha holic. Minuman, kue, es krim, dan camilan matcha dengan harga jelas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="menu.css">
+  <link rel="stylesheet" href="../js/matcha-app.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="../index.html" class="logo" aria-label="Matcha holic — beranda">Matcha <em>holic</em></a>
+
+      <nav class="nav" aria-label="Navigasi utama">
+        <a href="../index.html" class="nav__link">Home</a>
+        <a href="menu.html" class="nav__link nav__link--active" aria-current="page">Menu</a>
+        <a href="#kontak-pop" class="nav__link">Kontak</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="../login.html" class="btn btn--primary">Masuk / Daftar</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu -->
+  <main class="page">
+    <div class="container">
+      <header class="page__header">
+        <h1 class="page__title">Menu yang tersedia</h1>
+        <p class="page__subtitle">Pilih dan nikmati berbagai varian matcha</p>
+      </header>
+
+      <!-- Filter kategori + pagination: HTML + CSS saja, tanpa JavaScript.
+           Satu grup radio (name="view") menyimpan tampilan yang aktif:
+           8 halaman "Semua" dan satu keadaan untuk tiap halaman kategori.
+           Radio harus berada tepat sebelum .menu-layout agar selector
+           "#view-…:checked ~ .menu-layout …" tetap berlaku. -->
+<input class="view-state" type="radio" name="view" id="view-semua" checked>
+<input class="view-state" type="radio" name="view" id="view-semua-2">
+<input class="view-state" type="radio" name="view" id="view-semua-3">
+<input class="view-state" type="radio" name="view" id="view-semua-4">
+<input class="view-state" type="radio" name="view" id="view-semua-5">
+<input class="view-state" type="radio" name="view" id="view-semua-6">
+<input class="view-state" type="radio" name="view" id="view-semua-7">
+<input class="view-state" type="radio" name="view" id="view-semua-8">
+<input class="view-state" type="radio" name="view" id="view-minuman">
+<input class="view-state" type="radio" name="view" id="view-minuman-2">
+<input class="view-state" type="radio" name="view" id="view-minuman-3">
+<input class="view-state" type="radio" name="view" id="view-kue">
+<input class="view-state" type="radio" name="view" id="view-kue-2">
+<input class="view-state" type="radio" name="view" id="view-kue-3">
+<input class="view-state" type="radio" name="view" id="view-eskrim">
+<input class="view-state" type="radio" name="view" id="view-camilan">
+<input class="view-state" type="radio" name="view" id="view-camilan-2">
+<input class="view-state" type="radio" name="view" id="view-dessert">
+<input class="view-state" type="radio" name="view" id="view-dessert-2">
+      <div class="menu-layout">
+
+        <!-- Filter kategori (kiri) -->
+        <aside class="filters" aria-labelledby="filter-title">
+          <h2 class="filters__title" id="filter-title">Kategori</h2>
+          <div class="filters__list">
+            <label class="filter filter--semua" for="view-semua">Semua</label>
+            <label class="filter filter--minuman" for="view-minuman">Minuman</label>
+            <label class="filter filter--kue" for="view-kue">Kue</label>
+            <label class="filter filter--eskrim" for="view-eskrim">Eskrim</label>
+            <label class="filter filter--camilan" for="view-camilan">Camilan</label>
+            <label class="filter filter--dessert" for="view-dessert">Dessert</label>
+          </div>
+        </aside>
+
+        <div class="menu-main">
+          <div class="product-grid">
+
+            <div class="product-card" data-cat="minuman">
+              <a class="product-card__link" href="../detail/detail.html">
+              <div class="product-card__media product-card__media--drink">
+                <img src="leo/iced-matcha-latte.jpg" alt="Iced matcha latte dingin dalam gelas kaca" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Minuman dingin</p>
+                <h2 class="product-card__name">Iced matcha latte</h2>
+                <p class="product-card__price">Rp 50.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="minuman">
+              <a class="product-card__link" href="../detail/detail-dirty-matcha.html">
+              <div class="product-card__media product-card__media--drink">
+                <img src="leo/dirty-matcha-latte.jpg" alt="Dirty matcha latte dingin di atas meja kafe" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Minuman dingin</p>
+                <h2 class="product-card__name">Dirty matcha latte</h2>
+                <p class="product-card__price">Rp 55.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="minuman">
+              <a class="product-card__link" href="../detail/detail-strawberry-matcha.html">
+              <div class="product-card__media product-card__media--drink">
+                <img src="leo/strawberry-matcha-latte.jpg" alt="Strawberry matcha latte dengan selai stroberi di dasar gelas" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Minuman dingin</p>
+                <h2 class="product-card__name">Strawberry matcha latte</h2>
+                <p class="product-card__price">Rp 58.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="minuman">
+              <a class="product-card__link" href="../detail/detail-matcha-latte-hangat.html">
+              <div class="product-card__media">
+                <img src="leo/matcha-latte-hangat.jpg" alt="Matcha latte hangat dengan latte art daun di cangkir putih" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Minuman hangat</p>
+                <h2 class="product-card__name">Matcha latte hangat</h2>
+                <p class="product-card__price">Rp 50.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="minuman">
+              <a class="product-card__link" href="../detail/detail-matcha-cloud.html">
+              <div class="product-card__media product-card__media--drink">
+                <img src="../menu baru/minuman-dingin/02-matcha-cloud.png" alt="Matcha cloud — Minuman dingin" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Minuman dingin</p>
+                <h2 class="product-card__name">Matcha cloud</h2>
+                <p class="product-card__price">Rp 42.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="minuman">
+              <a class="product-card__link" href="../detail/detail-matcha-frappe.html">
+              <div class="product-card__media product-card__media--drink">
+                <img src="../menu baru/minuman-dingin/04-matcha-frappe.png" alt="Matcha frappe — Minuman dingin" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Minuman dingin</p>
+                <h2 class="product-card__name">Matcha frappe</h2>
+                <p class="product-card__price">Rp 45.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="minuman">
+              <a class="product-card__link" href="../detail/detail-matcha-espresso-fusion.html">
+              <div class="product-card__media product-card__media--drink">
+                <img src="../menu baru/minuman-dingin/21-matcha-espresso-fusion.png" alt="Matcha espresso fusion — Minuman dingin" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Minuman dingin</p>
+                <h2 class="product-card__name">Matcha espresso fusion</h2>
+                <p class="product-card__price">Rp 45.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="minuman">
+              <a class="product-card__link" href="../detail/detail-matcha-yuzu-fizz.html">
+              <div class="product-card__media product-card__media--drink">
+                <img src="../menu baru/minuman-dingin/22-matcha-yuzu-fizz.png" alt="Matcha yuzu fizz — Minuman dingin" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Minuman dingin</p>
+                <h2 class="product-card__name">Matcha yuzu fizz</h2>
+                <p class="product-card__price">Rp 40.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="minuman">
+              <a class="product-card__link" href="../detail/detail-mango-matcha-latte.html">
+              <div class="product-card__media product-card__media--drink">
+                <img src="../menu baru/minuman-dingin/23-mango-matcha-latte.png" alt="Mango matcha latte — Minuman dingin" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Minuman dingin</p>
+                <h2 class="product-card__name">Mango matcha latte</h2>
+                <p class="product-card__price">Rp 45.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="minuman">
+              <a class="product-card__link" href="../detail/detail-matcha-oat-boba.html">
+              <div class="product-card__media product-card__media--drink">
+                <img src="../menu baru/minuman-dingin/24-matcha-oat-boba.png" alt="Matcha oat boba — Minuman dingin" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Minuman dingin</p>
+                <h2 class="product-card__name">Matcha oat boba</h2>
+                <p class="product-card__price">Rp 45.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="minuman">
+              <a class="product-card__link" href="../detail/detail-matcha-chawan-tradisional.html">
+              <div class="product-card__media product-card__media--drink">
+                <img src="../menu baru/minuman-hangat/06-matcha-chawan-tradisional.png" alt="Matcha chawan tradisional — Minuman hangat" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Minuman hangat</p>
+                <h2 class="product-card__name">Matcha chawan tradisional</h2>
+                <p class="product-card__price">Rp 35.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="minuman">
+              <a class="product-card__link" href="../detail/detail-matcha-cappuccino.html">
+              <div class="product-card__media product-card__media--drink">
+                <img src="../menu baru/minuman-hangat/07-matcha-cappuccino.png" alt="Matcha cappuccino — Minuman hangat" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Minuman hangat</p>
+                <h2 class="product-card__name">Matcha cappuccino</h2>
+                <p class="product-card__price">Rp 40.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="minuman">
+              <a class="product-card__link" href="../detail/detail-white-chocolate-matcha.html">
+              <div class="product-card__media product-card__media--drink">
+                <img src="../menu baru/minuman-hangat/08-white-chocolate-matcha.png" alt="White chocolate matcha — Minuman hangat" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Minuman hangat</p>
+                <h2 class="product-card__name">White chocolate matcha</h2>
+                <p class="product-card__price">Rp 45.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="minuman">
+              <a class="product-card__link" href="../detail/detail-hojicha-matcha-latte.html">
+              <div class="product-card__media product-card__media--drink">
+                <img src="../menu baru/minuman-hangat/25-hojicha-matcha-latte.png" alt="Hojicha matcha latte — Minuman hangat" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Minuman hangat</p>
+                <h2 class="product-card__name">Hojicha matcha latte</h2>
+                <p class="product-card__price">Rp 42.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="minuman">
+              <a class="product-card__link" href="../detail/detail-matcha-black-sesame-latte.html">
+              <div class="product-card__media product-card__media--drink">
+                <img src="../menu baru/minuman-hangat/26-matcha-black-sesame-latte.png" alt="Matcha black sesame latte — Minuman hangat" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Minuman hangat</p>
+                <h2 class="product-card__name">Matcha black sesame latte</h2>
+                <p class="product-card__price">Rp 45.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="minuman">
+              <a class="product-card__link" href="../detail/detail-matcha-ginger-honey-tea.html">
+              <div class="product-card__media product-card__media--drink">
+                <img src="../menu baru/minuman-hangat/27-matcha-ginger-honey-tea.png" alt="Matcha ginger honey tea — Minuman hangat" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Minuman hangat</p>
+                <h2 class="product-card__name">Matcha ginger honey tea</h2>
+                <p class="product-card__price">Rp 38.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="minuman">
+              <a class="product-card__link" href="../detail/detail-matcha-coconut-warm-latte.html">
+              <div class="product-card__media product-card__media--drink">
+                <img src="../menu baru/minuman-hangat/28-matcha-coconut-warm-latte.png" alt="Matcha coconut warm latte — Minuman hangat" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Minuman hangat</p>
+                <h2 class="product-card__name">Matcha coconut warm latte</h2>
+                <p class="product-card__price">Rp 45.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="kue">
+              <a class="product-card__link" href="../detail/detail-matcha-cheesecake.html">
+              <div class="product-card__media">
+                <img src="leo/matcha-cheesecake.jpg" alt="Sepotong matcha cheesecake dengan taburan bubuk matcha" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Kue</p>
+                <h2 class="product-card__name">Matcha cheesecake</h2>
+                <p class="product-card__price">Rp 45.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="kue">
+              <a class="product-card__link" href="../detail/detail-matcha-chiffon-cake.html">
+              <div class="product-card__media">
+                <img src="leo/matcha-chiffon-cake.jpg" alt="Matcha chiffon cake dengan lapisan krim dan taburan bubuk matcha" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Kue</p>
+                <h2 class="product-card__name">Matcha chiffon cake</h2>
+                <p class="product-card__price">Rp 42.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="kue">
+              <a class="product-card__link" href="../detail/detail-matcha-croissant.html">
+              <div class="product-card__media">
+                <img src="leo/matcha-croissant.jpg" alt="Croissant renyah dengan isian krim matcha" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Kue</p>
+                <h2 class="product-card__name">Matcha croissant</h2>
+                <p class="product-card__price">Rp 35.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="kue">
+              <a class="product-card__link" href="../detail/detail-matcha-layer-cake.html">
+              <div class="product-card__media">
+                <img src="leo/matcha-layer-cake.jpg" alt="Sepotong matcha layer cake dengan lapisan krim tipis" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Kue</p>
+                <h2 class="product-card__name">Matcha layer cake</h2>
+                <p class="product-card__price">Rp 45.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="kue">
+              <a class="product-card__link" href="../detail/detail-donat-matcha.html">
+              <div class="product-card__media">
+                <img src="leo/donat-matcha.jpg" alt="Donat dengan glasir matcha mengilap dan taburan bubuk matcha" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Kue</p>
+                <h2 class="product-card__name">Donat matcha</h2>
+                <p class="product-card__price">Rp 28.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="kue">
+              <a class="product-card__link" href="../detail/detail-mochi-matcha.html">
+              <div class="product-card__media">
+                <img src="leo/mochi-matcha.jpg" alt="Mochi matcha kenyal dengan isian krim matcha lumer" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Kue</p>
+                <h2 class="product-card__name">Mochi matcha</h2>
+                <p class="product-card__price">Rp 32.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="kue">
+              <a class="product-card__link" href="../detail/detail-matcha-roll-cake.html">
+              <div class="product-card__media">
+                <img src="../menu baru/kue/13-matcha-roll-cake.png" alt="Matcha roll cake — Kue" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Kue</p>
+                <h2 class="product-card__name">Matcha roll cake</h2>
+                <p class="product-card__price">Rp 40.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="kue">
+              <a class="product-card__link" href="../detail/detail-matcha-basque-cheesecake.html">
+              <div class="product-card__media">
+                <img src="../menu baru/kue/14-matcha-basque-cheesecake.png" alt="Matcha basque cheesecake — Kue" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Kue</p>
+                <h2 class="product-card__name">Matcha basque cheesecake</h2>
+                <p class="product-card__price">Rp 50.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="kue">
+              <a class="product-card__link" href="../detail/detail-matcha-mille-crepe.html">
+              <div class="product-card__media">
+                <img src="../menu baru/kue/15-matcha-mille-crepe.png" alt="Matcha mille crepe — Kue" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Kue</p>
+                <h2 class="product-card__name">Matcha mille crepe</h2>
+                <p class="product-card__price">Rp 52.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="kue">
+              <a class="product-card__link" href="../detail/detail-matcha-cupcake.html">
+              <div class="product-card__media">
+                <img src="../menu baru/kue/16-matcha-cupcake.png" alt="Matcha cupcake — Kue" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Kue</p>
+                <h2 class="product-card__name">Matcha cupcake</h2>
+                <p class="product-card__price">Rp 38.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="kue">
+              <a class="product-card__link" href="../detail/detail-matcha-tiramisu.html">
+              <div class="product-card__media">
+                <img src="../menu baru/kue/33-matcha-tiramisu.png" alt="Matcha tiramisu — Kue" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Kue</p>
+                <h2 class="product-card__name">Matcha tiramisu</h2>
+                <p class="product-card__price">Rp 52.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="kue">
+              <a class="product-card__link" href="../detail/detail-matcha-opera-cake.html">
+              <div class="product-card__media">
+                <img src="../menu baru/kue/34-matcha-opera-cake.png" alt="Matcha opera cake — Kue" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Kue</p>
+                <h2 class="product-card__name">Matcha opera cake</h2>
+                <p class="product-card__price">Rp 55.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="kue">
+              <a class="product-card__link" href="../detail/detail-matcha-choux-cream.html">
+              <div class="product-card__media">
+                <img src="../menu baru/kue/35-matcha-choux-cream.png" alt="Matcha choux cream — Kue" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Kue</p>
+                <h2 class="product-card__name">Matcha choux cream</h2>
+                <p class="product-card__price">Rp 35.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="kue">
+              <a class="product-card__link" href="../detail/detail-matcha-lava-cake.html">
+              <div class="product-card__media">
+                <img src="../menu baru/kue/36-matcha-lava-cake.png" alt="Matcha lava cake — Kue" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Kue</p>
+                <h2 class="product-card__name">Matcha lava cake</h2>
+                <p class="product-card__price">Rp 50.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="eskrim">
+              <a class="product-card__link" href="../detail/detail-es-krim-matcha.html">
+              <div class="product-card__media">
+                <img src="leo/es-krim-matcha.jpg" alt="Es krim soft serve matcha dalam cup kertas" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Eskrim</p>
+                <h2 class="product-card__name">Es krim matcha</h2>
+                <p class="product-card__price">Rp 30.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="camilan">
+              <a class="product-card__link" href="../detail/detail-pastri-panko-matcha.html">
+              <div class="product-card__media">
+                <img src="leo/pastri-panko-matcha.jpg" alt="Pastri berbalut panko dengan isian krim matcha lumer" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Camilan</p>
+                <h2 class="product-card__name">Pastri panko matcha</h2>
+                <p class="product-card__price">Rp 38.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="camilan">
+              <a class="product-card__link" href="../detail/detail-dumpling-cokelat-matcha.html">
+              <div class="product-card__media">
+                <img src="leo/dumpling-cokelat-matcha.jpg" alt="Dumpling goreng hijau dengan isian cokelat lumer" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Camilan</p>
+                <h2 class="product-card__name">Dumpling cokelat matcha</h2>
+                <p class="product-card__price">Rp 40.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="camilan">
+              <a class="product-card__link" href="../detail/detail-popcorn-matcha.html">
+              <div class="product-card__media">
+                <img src="leo/popcorn-matcha.jpg" alt="Popcorn berbalut bubuk matcha di dalam mangkuk" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Camilan</p>
+                <h2 class="product-card__name">Popcorn matcha</h2>
+                <p class="product-card__price">Rp 25.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="camilan">
+              <a class="product-card__link" href="../detail/detail-matcha-cookies.html">
+              <div class="product-card__media">
+                <img src="../menu baru/makanan-ringan/10-matcha-cookies.png" alt="Matcha cookies — Makanan ringan" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Makanan ringan</p>
+                <h2 class="product-card__name">Matcha cookies</h2>
+                <p class="product-card__price">Rp 30.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="camilan">
+              <a class="product-card__link" href="../detail/detail-matcha-waffle.html">
+              <div class="product-card__media">
+                <img src="../menu baru/makanan-ringan/11-matcha-waffle.png" alt="Matcha waffle — Makanan ringan" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Makanan ringan</p>
+                <h2 class="product-card__name">Matcha waffle</h2>
+                <p class="product-card__price">Rp 42.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="camilan">
+              <a class="product-card__link" href="../detail/detail-matcha-dorayaki.html">
+              <div class="product-card__media">
+                <img src="../menu baru/makanan-ringan/12-matcha-dorayaki.png" alt="Matcha dorayaki — Makanan ringan" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Makanan ringan</p>
+                <h2 class="product-card__name">Matcha dorayaki</h2>
+                <p class="product-card__price">Rp 32.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="camilan">
+              <a class="product-card__link" href="../detail/detail-matcha-financier.html">
+              <div class="product-card__media">
+                <img src="../menu baru/makanan-ringan/30-matcha-financier.png" alt="Matcha financier — Makanan ringan" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Makanan ringan</p>
+                <h2 class="product-card__name">Matcha financier</h2>
+                <p class="product-card__price">Rp 28.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="camilan">
+              <a class="product-card__link" href="../detail/detail-matcha-churros.html">
+              <div class="product-card__media">
+                <img src="../menu baru/makanan-ringan/31-matcha-churros.png" alt="Matcha churros — Makanan ringan" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Makanan ringan</p>
+                <h2 class="product-card__name">Matcha churros</h2>
+                <p class="product-card__price">Rp 35.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="camilan">
+              <a class="product-card__link" href="../detail/detail-matcha-madeleine.html">
+              <div class="product-card__media">
+                <img src="../menu baru/makanan-ringan/32-matcha-madeleine.png" alt="Matcha madeleine — Makanan ringan" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Makanan ringan</p>
+                <h2 class="product-card__name">Matcha madeleine</h2>
+                <p class="product-card__price">Rp 28.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="dessert">
+              <a class="product-card__link" href="../detail/detail-matcha-parfait.html">
+              <div class="product-card__media">
+                <img src="../menu baru/dessert/18-matcha-parfait.png" alt="Matcha parfait — Dessert" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Dessert</p>
+                <h2 class="product-card__name">Matcha parfait</h2>
+                <p class="product-card__price">Rp 50.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="dessert">
+              <a class="product-card__link" href="../detail/detail-matcha-pudding.html">
+              <div class="product-card__media">
+                <img src="../menu baru/dessert/19-matcha-pudding.png" alt="Matcha pudding — Dessert" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Dessert</p>
+                <h2 class="product-card__name">Matcha pudding</h2>
+                <p class="product-card__price">Rp 38.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="dessert">
+              <a class="product-card__link" href="../detail/detail-matcha-kakigori.html">
+              <div class="product-card__media">
+                <img src="../menu baru/dessert/20-matcha-kakigori.png" alt="Matcha kakigori — Dessert" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Dessert</p>
+                <h2 class="product-card__name">Matcha kakigori</h2>
+                <p class="product-card__price">Rp 48.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="dessert">
+              <a class="product-card__link" href="../detail/detail-matcha-affogato.html">
+              <div class="product-card__media">
+                <img src="../menu baru/dessert/37-matcha-affogato.png" alt="Matcha affogato — Dessert" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Dessert</p>
+                <h2 class="product-card__name">Matcha affogato</h2>
+                <p class="product-card__price">Rp 48.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="dessert">
+              <a class="product-card__link" href="../detail/detail-matcha-bingsu.html">
+              <div class="product-card__media">
+                <img src="../menu baru/dessert/38-matcha-bingsu.png" alt="Matcha bingsu — Dessert" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Dessert</p>
+                <h2 class="product-card__name">Matcha bingsu</h2>
+                <p class="product-card__price">Rp 55.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="dessert">
+              <a class="product-card__link" href="../detail/detail-matcha-panna-cotta.html">
+              <div class="product-card__media">
+                <img src="../menu baru/dessert/39-matcha-panna-cotta.png" alt="Matcha panna cotta — Dessert" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Dessert</p>
+                <h2 class="product-card__name">Matcha panna cotta</h2>
+                <p class="product-card__price">Rp 42.000</p>
+              </div>
+            </a>
+            </div>
+
+            <div class="product-card" data-cat="dessert">
+              <a class="product-card__link" href="../detail/detail-matcha-crepe-roll.html">
+              <div class="product-card__media">
+                <img src="../menu baru/dessert/40-matcha-crepe-roll.png" alt="Matcha crepe roll — Dessert" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <p class="product-card__category">Dessert</p>
+                <h2 class="product-card__name">Matcha crepe roll</h2>
+                <p class="product-card__price">Rp 40.000</p>
+              </div>
+            </a>
+            </div>
+          </div>
+
+          <div class="menu-toolbar">
+            <!-- Pagination mengikuti tampilan yang aktif:
+                 "Semua" = 3 halaman (6 + 6 + 2 produk), tiap kategori = 1 halaman. -->
+            <!-- Pagination mengikuti tampilan yang aktif: 8 halaman untuk "Semua"
+                 dan halaman tersendiri untuk tiap kategori. Maksimal 6 produk per halaman. -->
+            <div class="pagination" aria-label="Navigasi halaman">
+              <div class="pagination__set" data-view="view-semua">
+                <span class="pagination__page pagination__page--current" aria-current="page">1</span>
+                <label class="pagination__page" for="view-semua-2">2</label>
+                <label class="pagination__page" for="view-semua-3">3</label>
+                <label class="pagination__page" for="view-semua-4">4</label>
+                <label class="pagination__page" for="view-semua-5">5</label>
+                <label class="pagination__page" for="view-semua-6">6</label>
+                <label class="pagination__page" for="view-semua-7">7</label>
+                <label class="pagination__page" for="view-semua-8">8</label>
+                <label class="pagination__page pagination__page--next" for="view-semua-2" aria-label="Halaman berikutnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 6 6 6-6 6"></path>
+                  </svg>
+                </label>
+              </div>
+              <div class="pagination__set" data-view="view-semua-2">
+                <label class="pagination__page pagination__page--prev" for="view-semua" aria-label="Halaman sebelumnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m15 6-6 6 6 6"></path>
+                  </svg>
+                </label>
+                <label class="pagination__page" for="view-semua">1</label>
+                <span class="pagination__page pagination__page--current" aria-current="page">2</span>
+                <label class="pagination__page" for="view-semua-3">3</label>
+                <label class="pagination__page" for="view-semua-4">4</label>
+                <label class="pagination__page" for="view-semua-5">5</label>
+                <label class="pagination__page" for="view-semua-6">6</label>
+                <label class="pagination__page" for="view-semua-7">7</label>
+                <label class="pagination__page" for="view-semua-8">8</label>
+                <label class="pagination__page pagination__page--next" for="view-semua-3" aria-label="Halaman berikutnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 6 6 6-6 6"></path>
+                  </svg>
+                </label>
+              </div>
+              <div class="pagination__set" data-view="view-semua-3">
+                <label class="pagination__page pagination__page--prev" for="view-semua-2" aria-label="Halaman sebelumnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m15 6-6 6 6 6"></path>
+                  </svg>
+                </label>
+                <label class="pagination__page" for="view-semua">1</label>
+                <label class="pagination__page" for="view-semua-2">2</label>
+                <span class="pagination__page pagination__page--current" aria-current="page">3</span>
+                <label class="pagination__page" for="view-semua-4">4</label>
+                <label class="pagination__page" for="view-semua-5">5</label>
+                <label class="pagination__page" for="view-semua-6">6</label>
+                <label class="pagination__page" for="view-semua-7">7</label>
+                <label class="pagination__page" for="view-semua-8">8</label>
+                <label class="pagination__page pagination__page--next" for="view-semua-4" aria-label="Halaman berikutnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 6 6 6-6 6"></path>
+                  </svg>
+                </label>
+              </div>
+              <div class="pagination__set" data-view="view-semua-4">
+                <label class="pagination__page pagination__page--prev" for="view-semua-3" aria-label="Halaman sebelumnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m15 6-6 6 6 6"></path>
+                  </svg>
+                </label>
+                <label class="pagination__page" for="view-semua">1</label>
+                <label class="pagination__page" for="view-semua-2">2</label>
+                <label class="pagination__page" for="view-semua-3">3</label>
+                <span class="pagination__page pagination__page--current" aria-current="page">4</span>
+                <label class="pagination__page" for="view-semua-5">5</label>
+                <label class="pagination__page" for="view-semua-6">6</label>
+                <label class="pagination__page" for="view-semua-7">7</label>
+                <label class="pagination__page" for="view-semua-8">8</label>
+                <label class="pagination__page pagination__page--next" for="view-semua-5" aria-label="Halaman berikutnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 6 6 6-6 6"></path>
+                  </svg>
+                </label>
+              </div>
+              <div class="pagination__set" data-view="view-semua-5">
+                <label class="pagination__page pagination__page--prev" for="view-semua-4" aria-label="Halaman sebelumnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m15 6-6 6 6 6"></path>
+                  </svg>
+                </label>
+                <label class="pagination__page" for="view-semua">1</label>
+                <label class="pagination__page" for="view-semua-2">2</label>
+                <label class="pagination__page" for="view-semua-3">3</label>
+                <label class="pagination__page" for="view-semua-4">4</label>
+                <span class="pagination__page pagination__page--current" aria-current="page">5</span>
+                <label class="pagination__page" for="view-semua-6">6</label>
+                <label class="pagination__page" for="view-semua-7">7</label>
+                <label class="pagination__page" for="view-semua-8">8</label>
+                <label class="pagination__page pagination__page--next" for="view-semua-6" aria-label="Halaman berikutnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 6 6 6-6 6"></path>
+                  </svg>
+                </label>
+              </div>
+              <div class="pagination__set" data-view="view-semua-6">
+                <label class="pagination__page pagination__page--prev" for="view-semua-5" aria-label="Halaman sebelumnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m15 6-6 6 6 6"></path>
+                  </svg>
+                </label>
+                <label class="pagination__page" for="view-semua">1</label>
+                <label class="pagination__page" for="view-semua-2">2</label>
+                <label class="pagination__page" for="view-semua-3">3</label>
+                <label class="pagination__page" for="view-semua-4">4</label>
+                <label class="pagination__page" for="view-semua-5">5</label>
+                <span class="pagination__page pagination__page--current" aria-current="page">6</span>
+                <label class="pagination__page" for="view-semua-7">7</label>
+                <label class="pagination__page" for="view-semua-8">8</label>
+                <label class="pagination__page pagination__page--next" for="view-semua-7" aria-label="Halaman berikutnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 6 6 6-6 6"></path>
+                  </svg>
+                </label>
+              </div>
+              <div class="pagination__set" data-view="view-semua-7">
+                <label class="pagination__page pagination__page--prev" for="view-semua-6" aria-label="Halaman sebelumnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m15 6-6 6 6 6"></path>
+                  </svg>
+                </label>
+                <label class="pagination__page" for="view-semua">1</label>
+                <label class="pagination__page" for="view-semua-2">2</label>
+                <label class="pagination__page" for="view-semua-3">3</label>
+                <label class="pagination__page" for="view-semua-4">4</label>
+                <label class="pagination__page" for="view-semua-5">5</label>
+                <label class="pagination__page" for="view-semua-6">6</label>
+                <span class="pagination__page pagination__page--current" aria-current="page">7</span>
+                <label class="pagination__page" for="view-semua-8">8</label>
+                <label class="pagination__page pagination__page--next" for="view-semua-8" aria-label="Halaman berikutnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 6 6 6-6 6"></path>
+                  </svg>
+                </label>
+              </div>
+              <div class="pagination__set" data-view="view-semua-8">
+                <label class="pagination__page pagination__page--prev" for="view-semua-7" aria-label="Halaman sebelumnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m15 6-6 6 6 6"></path>
+                  </svg>
+                </label>
+                <label class="pagination__page" for="view-semua">1</label>
+                <label class="pagination__page" for="view-semua-2">2</label>
+                <label class="pagination__page" for="view-semua-3">3</label>
+                <label class="pagination__page" for="view-semua-4">4</label>
+                <label class="pagination__page" for="view-semua-5">5</label>
+                <label class="pagination__page" for="view-semua-6">6</label>
+                <label class="pagination__page" for="view-semua-7">7</label>
+                <span class="pagination__page pagination__page--current" aria-current="page">8</span>
+              </div>
+              <div class="pagination__set" data-view="view-minuman">
+                <span class="pagination__page pagination__page--current" aria-current="page">1</span>
+                <label class="pagination__page" for="view-minuman-2">2</label>
+                <label class="pagination__page" for="view-minuman-3">3</label>
+                <label class="pagination__page pagination__page--next" for="view-minuman-2" aria-label="Halaman berikutnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 6 6 6-6 6"></path>
+                  </svg>
+                </label>
+              </div>
+              <div class="pagination__set" data-view="view-minuman-2">
+                <label class="pagination__page pagination__page--prev" for="view-minuman" aria-label="Halaman sebelumnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m15 6-6 6 6 6"></path>
+                  </svg>
+                </label>
+                <label class="pagination__page" for="view-minuman">1</label>
+                <span class="pagination__page pagination__page--current" aria-current="page">2</span>
+                <label class="pagination__page" for="view-minuman-3">3</label>
+                <label class="pagination__page pagination__page--next" for="view-minuman-3" aria-label="Halaman berikutnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 6 6 6-6 6"></path>
+                  </svg>
+                </label>
+              </div>
+              <div class="pagination__set" data-view="view-minuman-3">
+                <label class="pagination__page pagination__page--prev" for="view-minuman-2" aria-label="Halaman sebelumnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m15 6-6 6 6 6"></path>
+                  </svg>
+                </label>
+                <label class="pagination__page" for="view-minuman">1</label>
+                <label class="pagination__page" for="view-minuman-2">2</label>
+                <span class="pagination__page pagination__page--current" aria-current="page">3</span>
+              </div>
+              <div class="pagination__set" data-view="view-kue">
+                <span class="pagination__page pagination__page--current" aria-current="page">1</span>
+                <label class="pagination__page" for="view-kue-2">2</label>
+                <label class="pagination__page" for="view-kue-3">3</label>
+                <label class="pagination__page pagination__page--next" for="view-kue-2" aria-label="Halaman berikutnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 6 6 6-6 6"></path>
+                  </svg>
+                </label>
+              </div>
+              <div class="pagination__set" data-view="view-kue-2">
+                <label class="pagination__page pagination__page--prev" for="view-kue" aria-label="Halaman sebelumnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m15 6-6 6 6 6"></path>
+                  </svg>
+                </label>
+                <label class="pagination__page" for="view-kue">1</label>
+                <span class="pagination__page pagination__page--current" aria-current="page">2</span>
+                <label class="pagination__page" for="view-kue-3">3</label>
+                <label class="pagination__page pagination__page--next" for="view-kue-3" aria-label="Halaman berikutnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 6 6 6-6 6"></path>
+                  </svg>
+                </label>
+              </div>
+              <div class="pagination__set" data-view="view-kue-3">
+                <label class="pagination__page pagination__page--prev" for="view-kue-2" aria-label="Halaman sebelumnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m15 6-6 6 6 6"></path>
+                  </svg>
+                </label>
+                <label class="pagination__page" for="view-kue">1</label>
+                <label class="pagination__page" for="view-kue-2">2</label>
+                <span class="pagination__page pagination__page--current" aria-current="page">3</span>
+              </div>
+              <div class="pagination__set" data-view="view-eskrim">
+                <span class="pagination__page pagination__page--current" aria-current="page">1</span>
+              </div>
+              <div class="pagination__set" data-view="view-camilan">
+                <span class="pagination__page pagination__page--current" aria-current="page">1</span>
+                <label class="pagination__page" for="view-camilan-2">2</label>
+                <label class="pagination__page pagination__page--next" for="view-camilan-2" aria-label="Halaman berikutnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 6 6 6-6 6"></path>
+                  </svg>
+                </label>
+              </div>
+              <div class="pagination__set" data-view="view-camilan-2">
+                <label class="pagination__page pagination__page--prev" for="view-camilan" aria-label="Halaman sebelumnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m15 6-6 6 6 6"></path>
+                  </svg>
+                </label>
+                <label class="pagination__page" for="view-camilan">1</label>
+                <span class="pagination__page pagination__page--current" aria-current="page">2</span>
+              </div>
+              <div class="pagination__set" data-view="view-dessert">
+                <span class="pagination__page pagination__page--current" aria-current="page">1</span>
+                <label class="pagination__page" for="view-dessert-2">2</label>
+                <label class="pagination__page pagination__page--next" for="view-dessert-2" aria-label="Halaman berikutnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 6 6 6-6 6"></path>
+                  </svg>
+                </label>
+              </div>
+              <div class="pagination__set" data-view="view-dessert-2">
+                <label class="pagination__page pagination__page--prev" for="view-dessert" aria-label="Halaman sebelumnya">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m15 6-6 6 6 6"></path>
+                  </svg>
+                </label>
+                <label class="pagination__page" for="view-dessert">1</label>
+                <span class="pagination__page pagination__page--current" aria-current="page">2</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="../index.html" class="logo">Matcha <em>holic</em></a>
+          <p class="footer__tagline">Hijaukan harimu dengan berbagai menu matcha.</p>
+        </div>
+
+        <nav class="footer__col" aria-label="Jelajahi">
+          <h2 class="footer__heading">Jelajahi</h2>
+          <a href="../index.html" class="footer__link">Home</a>
+          <a href="menu.html" class="footer__link">Menu</a>
+        </nav>
+
+        <nav class="footer__col" aria-label="Informasi">
+          <h2 class="footer__heading">Informasi</h2>
+          <a href="#" class="footer__link">Tentang kami</a>
+          <a href="#" class="footer__link">Kebijakan privasi</a>
+          <a href="#kontak-pop" class="footer__link">Kontak</a>
+        </nav>
+
+        <div class="footer__col">
+          <h2 class="footer__heading">Ikuti kami</h2>
+          <div class="footer__social">
+            <a href="#" class="social" aria-label="Facebook Matcha holic">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social" aria-label="Instagram Matcha holic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5.4"></rect>
+                <circle cx="12" cy="12" r="4.2"></circle>
+                <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"></circle>
+              </svg>
+            </a>
+            <a href="#" class="social" aria-label="TikTok Matcha holic">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social" aria-label="WhatsApp Matcha holic">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 Matcha holic. Semua hak dilindungi.</p>
+        <p>Delivery · Take away</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Pop-up Kontak (HTML + CSS saja, tanpa JavaScript) =====
+       Seluruh kanal kontak di bawah ini BELUM tersedia di berkas proyek
+       (tidak ada nomor telepon, alamat, email, maupun akun media sosial
+       yang tercatat), sehingga ditampilkan sebagai placeholder yang jelas
+       agar dapat dilengkapi nanti. Tidak ada data yang dikarang. -->
+  <div class="mh-overlay" id="kontak-pop" role="dialog" aria-modal="true" aria-labelledby="kontak-pop-judul">
+    <div class="mh-pop">
+      <a class="mh-pop__close" href="#" aria-label="Tutup">&times;</a>
+      <p class="mh-pop__badge" id="kontak-pop-judul-label">Informasi kontak</p>
+      <h2 class="mh-pop__title" id="kontak-pop-judul">Kontak Matcha holic</h2>
+      <p class="mh-pop__sub">Kanal kontak resmi Matcha holic. Bagian yang belum tersedia di proyek ditandai placeholder.</p>
+
+      <dl class="mh-kontak">
+        <div class="mh-kontak__row">
+          <dt class="mh-kontak__label">Alamat kedai</dt>
+          <dd class="mh-kontak__value"><span class="mh-kontak__todo">Jl. kemiri 3 gang randu</span></dd>
+        </div>
+        <div class="mh-kontak__row">
+          <dt class="mh-kontak__label">WhatsApp / Telepon</dt>
+          <dd class="mh-kontak__value"><span class="mh-kontak__todo">08521234567</span></dd>
+        </div>
+        <div class="mh-kontak__row">
+          <dt class="mh-kontak__label">Email</dt>
+          <dd class="mh-kontak__value"><span class="mh-kontak__todo">matchaholic@gmail.com</span></dd>
+        </div>
+        <div class="mh-kontak__row">
+          <dt class="mh-kontak__label">Jam operasional</dt>
+          <dd class="mh-kontak__value"><span class="mh-kontak__todo">24 Jam</span></dd>
+        </div>
+        <div class="mh-kontak__row">
+          <dt class="mh-kontak__label">Media sosial</dt>
+          <dd class="mh-kontak__value"><span class="mh-kontak__todo">@matcha_holic</span></dd>
+        </div>
+      </dl>
+
+      <p class="mh-pop__note">Tidak ada nomor, alamat, atau akun media sosial yang dikarang. Isi placeholder di atas sesuai data resmi Matcha holic sebelum dipublikasikan.</p>
+
+      <div class="mh-pop__actions">
+        <a class="mh-btn mh-btn--dark" href="#">Tutup</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

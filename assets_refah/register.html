@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daftar Akun Baru | Matcha holic</title>
+  <meta name="description" content="Daftar akun Matcha holic untuk menikmati promo dan pesan matcha favoritmu, Delivery maupun Take away.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="register.css">
+  <link rel="stylesheet" href="js/matcha-app.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Matcha <em>holic</em></a>
+
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="index.html" class="nav-link is-active" aria-current="page">Home</a>
+        <a href="menu/menu.html" class="nav-link">Menu</a>
+        <a href="#kontak-pop" class="nav-link">Kontak</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="button-primary">Masuk / Daftar</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="register-card" aria-labelledby="judul-daftar">
+      <h1 class="register-title" id="judul-daftar">Daftar Akun Baru</h1>
+      <p class="register-subtitle">Daftar sekarang untuk menikmati kehangatan dan kelezatan matcha favoritmu.</p>
+
+      <form action="#" method="post">
+        <div class="field">
+          <label for="nama">Nama Lengkap</label>
+          <input class="input" type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" autocomplete="name" required>
+        </div>
+
+        <div class="field">
+          <label for="kontak">Email atau Nomor Telepon</label>
+          <input class="input" type="text" id="kontak" name="kontak" placeholder="Masukkan email atau nomor telepon" autocomplete="username" required>
+        </div>
+
+        <div class="field">
+          <label for="sandi">Kata Sandi</label>
+          <div class="input-wrap">
+            <input class="input" type="password" id="sandi" name="sandi" placeholder="Masukkan kata sandi" autocomplete="new-password" required>
+            <button type="button" class="toggle-eye" aria-label="Tampilkan kata sandi">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="konfirmasi">Konfirmasi Kata Sandi</label>
+          <div class="input-wrap">
+            <input class="input" type="password" id="konfirmasi" name="konfirmasi" placeholder="Masukkan kembali kata sandi" autocomplete="new-password" required>
+            <button type="button" class="toggle-eye" aria-label="Tampilkan konfirmasi kata sandi">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <label class="terms">
+          <input type="checkbox" name="setuju" required>
+          <span>Saya menyetujui Syarat &amp; Ketentuan serta Kebijakan Privasi</span>
+        </label>
+
+        <a class="button-submit" href="#pendaftaran-berhasil">Daftar</a>
+
+        <div class="divider-text">atau daftar dengan</div>
+
+        <div class="social-login">
+          <a class="button-social" href="#demo-google">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.52 12.27c0-.85-.08-1.67-.22-2.45H12v4.64h6.46a5.52 5.52 0 0 1-2.4 3.62v3h3.88c2.27-2.09 3.58-5.17 3.58-8.81z"/><path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.94-2.91l-3.88-3c-1.07.72-2.45 1.15-4.06 1.15-3.12 0-5.77-2.11-6.71-4.94H1.28v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.29 14.3a7.2 7.2 0 0 1 0-4.6v-3.1H1.28a12 12 0 0 0 0 10.8l4.01-3.1z"/><path fill="#EA4335" d="M12 4.75c1.76 0 3.34.61 4.58 1.8l3.44-3.44C17.95 1.19 15.23 0 12 0A12 12 0 0 0 1.28 6.6l4.01 3.1C6.23 6.86 8.88 4.75 12 4.75z"/></svg>
+            Google
+          </a>
+          <a class="button-social" href="#demo-facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </a>
+        </div>
+
+        <p class="login-link">Sudah punya akun? <a href="login.html">Masuk sekarang</a></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo">Matcha <em>holic</em></a>
+          <p class="footer-tagline">Hijaukan harimu dengan berbagai menu matcha.</p>
+        </div>
+
+        <nav aria-label="Jelajahi">
+          <h2 class="footer-heading">Jelajahi</h2>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="menu/menu.html" class="footer-link">Menu</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Informasi">
+          <h2 class="footer-heading">Informasi</h2>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Tentang kami</a></li>
+            <li><a href="#" class="footer-link">Kebijakan privasi</a></li>
+            <li><a href="#kontak-pop" class="footer-link">Kontak</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h2 class="footer-heading">Ikuti kami</h2>
+          <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.051 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Matcha holic. Semua hak dilindungi.</span>
+        <span>Delivery &middot; Take away</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mh-overlay" id="pendaftaran-berhasil" role="dialog" aria-modal="true" aria-labelledby="pendaftaran-berhasil-judul">
+    <div class="mh-pop">
+      <a class="mh-pop__close" href="register.html" aria-label="Tutup">&times;</a>
+      <h2 class="mh-pop__title" id="pendaftaran-berhasil-judul">Pendaftaran berhasil</h2>
+      <p class="mh-pop__sub">Akun demo berhasil dibuat (simulasi). Tidak ada akun sungguhan yang dibuat.</p>
+      <div class="mh-pop__actions">
+        <a class="mh-btn mh-btn--dark" href="index.html">Lanjutkan</a>
+        <a class="mh-btn mh-btn--light" href="register.html">Tutup</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mh-overlay" id="kontak-pop" role="dialog" aria-modal="true" aria-labelledby="kontak-pop-judul">
+    <div class="mh-pop">
+      <a class="mh-pop__close" href="#" aria-label="Tutup">&times;</a>
+      <p class="mh-pop__badge" id="kontak-pop-judul-label">Informasi kontak</p>
+      <h2 class="mh-pop__title" id="kontak-pop-judul">Kontak Matcha holic</h2>
+      <p class="mh-pop__sub">Kanal kontak resmi Matcha holic. Bagian yang belum tersedia di proyek ditandai placeholder.</p>
+
+      <dl class="mh-kontak">
+        <div class="mh-kontak__row">
+          <dt class="mh-kontak__label">Alamat kedai</dt>
+          <dd class="mh-kontak__value"><span class="mh-kontak__todo">[Belum tersedia &mdash; perlu dilengkapi]</span></dd>
+        </div>
+        <div class="mh-kontak__row">
+          <dt class="mh-kontak__label">WhatsApp / Telepon</dt>
+          <dd class="mh-kontak__value"><span class="mh-kontak__todo">[Belum tersedia &mdash; perlu dilengkapi]</span></dd>
+        </div>
+        <div class="mh-kontak__row">
+          <dt class="mh-kontak__label">Email</dt>
+          <dd class="mh-kontak__value"><span class="mh-kontak__todo">[Belum tersedia &mdash; perlu dilengkapi]</span></dd>
+        </div>
+        <div class="mh-kontak__row">
+          <dt class="mh-kontak__label">Jam operasional</dt>
+          <dd class="mh-kontak__value"><span class="mh-kontak__todo">[Belum tersedia &mdash; perlu dilengkapi]</span></dd>
+        </div>
+        <div class="mh-kontak__row">
+          <dt class="mh-kontak__label">Media sosial</dt>
+          <dd class="mh-kontak__value"><span class="mh-kontak__todo">[Belum tersedia &mdash; perlu dilengkapi]</span></dd>
+        </div>
+      </dl>
+
+      <div class="mh-pop__actions">
+        <a class="mh-btn mh-btn--dark" href="#">Tutup</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mh-overlay" id="demo-google" role="dialog" aria-modal="true" aria-labelledby="demo-google-judul">
+    <div class="mh-pop">
+      <a class="mh-pop__close" href="#" aria-label="Tutup">&times;</a>
+      <p class="mh-pop__badge">Demo</p>
+      <h2 class="mh-pop__title" id="demo-google-judul">Daftar dengan Google</h2>
+      <p class="mh-pop__sub">Ini hanya simulasi tampilan. Tidak ada autentikasi sungguhan, tidak ada akun Google yang terhubung, tidak ada akun yang dibuat atau diverifikasi, dan tidak ada data pendaftaran yang dikirim maupun disimpan.</p>
+      <div class="mh-pop__actions">
+        <a class="mh-btn mh-btn--dark" href="index.html">Lanjut tanpa akun</a>
+        <a class="mh-btn mh-btn--light" href="#">Tutup dan kembali</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mh-overlay" id="demo-facebook" role="dialog" aria-modal="true" aria-labelledby="demo-facebook-judul">
+    <div class="mh-pop">
+      <a class="mh-pop__close" href="#" aria-label="Tutup">&times;</a>
+      <p class="mh-pop__badge">Demo</p>
+      <h2 class="mh-pop__title" id="demo-facebook-judul">Daftar dengan Facebook</h2>
+      <p class="mh-pop__sub">Ini hanya simulasi tampilan. Tidak ada autentikasi sungguhan, tidak ada akun Facebook yang terhubung, tidak ada akun yang dibuat atau diverifikasi, dan tidak ada data pendaftaran yang dikirim maupun disimpan.</p>
+      <div class="mh-pop__actions">
+        <a class="mh-btn mh-btn--dark" href="index.html">Lanjut tanpa akun</a>
+        <a class="mh-btn mh-btn--light" href="#">Tutup dan kembali</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
